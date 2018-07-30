@@ -1,0 +1,232 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400');
+/* variables */
+:root {
+  --background-color: #fcf8ef;
+  --secondary-color: rgb(60, 72, 88);
+  --outrageous-orange: #ff5925;
+}
+/* resets */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Ubuntu', sans-serif;
+}
+body {
+  font-weight: 400;
+  font-size: 1.6rem;
+  background: var(--background-color);
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+/* components */
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: .8rem 1.5rem;
+  border-radius: 3px;
+  min-width: 6rem;
+  background-color: rgb(60, 72, 88);
+  color: white;      
+  transition: all .2s ease-in;
+  box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14),
+  0 3px 1px -2px rgba(153, 153, 153, 0.2),
+  0 1px 5px 0 rgba(153, 153, 153, 0.12);
+}
+.btn::after {
+  clear: both;
+}
+.btn:hover {
+  box-shadow: 0 16px 26px -10px rgb(60, 72, 88, 0.56),
+  0 4px 25px 0px rgba(0, 0, 0, 0.12),
+  0 8px 10px -5px rgb(60, 72, 88, 0.2);
+}
+.btn.round {
+  border-radius: 150px;
+}
+
+.input, .textarea {
+  position: relative;
+  height: 4.5rem;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: flex-end;
+}
+.textarea {
+  height: auto;
+  min-height: 10rem;
+  padding-top: 1rem;
+}
+.input > *, .textarea * {
+  flex: 1;
+}
+.input > .icon, .textarea > .icon {
+  fill: grey;
+  width: 1.8rem;
+  height: 1.8rem;
+  order: 1;
+  flex-basis: 2.5rem;
+  transition: color .2s ease-out;
+  flex-grow: 0;
+}
+.input input, .input input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-bottom: .5rem;
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color)), linear-gradient(#D2D2D2, #D2D2D2);
+  background-size: 0% 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0% bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background .2s ease-out;
+  will-change: background;
+}
+.input input:-webkit-autofill {
+  border-bottom: 1.2px solid #D2D2D2;
+}
+.input input:-webkit-autofill:focus {
+  border-bottom-color: var(--secondary-color);
+}
+.input input {
+  color: inherit;
+  font-size: inherit;
+}
+.input input:focus, .textarea textarea:focus {
+  background-size: 100% 2px, 100% 1px;
+}
+.input label, .textarea label {
+  position: absolute;
+  bottom: .7rem;
+  left: .1rem;
+  transition: all .2s ease-in;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: grey;
+}
+.input.active > label {
+  transform: translateY(-1.6rem);
+  font-size: .9rem;
+}
+.input.active > .icon, .textarea.active > .icon {
+  fill: var(--secondary-color);
+}
+.textarea textarea {
+  resize: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-family: inherit;
+  background-image: linear-gradient(var(--secondary-color), var(--secondary-color)), linear-gradient(#D2D2D2, #D2D2D2);
+  background-size: 0% 2px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0% bottom, center calc(100% - 1px);
+  background-color: transparent;
+  transition: background .2s ease-out;
+  will-change: background;
+  align-self: stretch;
+}
+.textarea.active > label {
+  transform: translateY(-8.2rem);
+  font-size: .9rem;
+}
+/* style */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 20rem;
+  color: gray;
+}
+.body .img {
+  flex: 1 0 300px;
+  min-height: 47rem;
+  box-shadow: 30px 0 100px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../img/img.jpeg);
+  background-size: 100%;
+  border-radius: 6px;
+  z-index: 1;
+  color: white;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.img h1 {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+.img p {
+  font-size: 1.5rem;
+}
+.body .content {
+  flex: 1 0 500px;
+  box-shadow: 10px 3px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background: white;
+}
+.content .header {
+  display: flex;
+  border-bottom: 1px solid #ececeb;
+  list-style: none;
+}
+.header li {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.header li {
+  transition: all .4s ease-in-out;
+}
+.content.all-view .header li.viewAllRecipe, .content.create-view .header li.createRecipe {
+  border-top: 4px solid var(--outrageous-orange);
+}
+.content .text {
+  padding: 4rem 5rem;
+  min-height: 38rem;
+}
+.content .text > div {
+  height: 100%;
+  max-height: 0;
+  opacity: .1;
+	overflow-y: hidden;
+	transition-property: all;
+  transition-duration: .6s;
+	transition-timing-function: ease-in-out;
+}
+.content.all-view .text > .all, .content.create-view .text > .create {
+  max-height: 500px;
+  opacity: 1;
+  transition-delay: .6s;
+}
+.content ul.list li {
+  cursor: pointer;
+}
+.content ul li h5 {
+  margin-bottom: 1rem;
+  color: black;
+}
+.content ul li p {
+  margin-bottom: 1rem;
+}
+
