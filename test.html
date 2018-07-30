@@ -35,6 +35,20 @@
         
         function signup() {
             //const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxODB9LCJpYXQiOjE1MzI5NTkyMTksImV4cCI6MTUzMjk2MjgxOX0.vK1C9KXEL4vLuQmVGxicSdoz2PnPytvuPKBAHfnH30w';
+            let username= document.getElementById('username').value;
+            let mail= document.getElementById('email').value;
+            let passwrd= document.getElementById('pass1').value;
+            let passwrd2 = document.getElementById('pass2').value;
+
+
+
+            let CreateObject = {
+                user: {
+                    fullname,
+                    email,
+                    password
+                }
+            }
 
             fetch('https://more-recipes.herokuapp.com/api/v1/users/signup', {
                 method: "POST",
@@ -43,13 +57,7 @@
                     'Content-type' : 'application/json'
                 },
                 
-               body: JSON.stringify({
-	"user": {
-          "fullname" : "Nice2 Guy",
-          "email": "nidcdde@guy.com",
-          "password": "10hh2938"
-	}
-        })
+               body: JSON.stringify(CreateObject)
             })
            .then(response => response.json())
            .then(result => {
