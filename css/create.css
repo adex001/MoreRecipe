@@ -87,7 +87,7 @@ html, body {
 #create_new_recipe .first_row .content {
   position: absolute;
   top: 35%;
-  left: 20%;
+  left: 17%;
 }
 #create_new_recipe .first_row .content h1 {
   color: white;
@@ -118,6 +118,12 @@ html, body {
 }
 #create_new_recipe .second_row form h3 {
   color: #694109;
+}
+#create_new_recipe .second_row form .add_item {
+  padding-top: 10px;
+  padding-left: 10px;
+  color: black;
+  background: #fafafa;
 }
 #create_new_recipe .second_row form .field {
   margin-bottom: 15px;

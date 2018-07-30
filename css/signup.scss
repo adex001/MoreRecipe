@@ -1,0 +1,33 @@
+.first_row {
+	.content {
+		h3 {
+			color: white;
+		}
+	}
+}
+nav {
+	li {
+		margin-right: 60px;
+		a#title {
+			text-decoration: none;
+			font-size: 1.3em;
+			color: #4a2e06 !important;
+		}
+	}
+}
+
+form {
+	.field {
+		input[type='email'] {
+			height: 40px;
+			width: 100%;
+			border: 1px solid #fdf5eb;
+			&:focus {
+				background: #fceedb;
+			}
+		}
+		input[type='submit'] {
+			font-size: 1.3em;
+		}
+	}
+}
