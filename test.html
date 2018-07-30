@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch API Sandbox</title>
+</head>
+<body>
+    <button id="getText">Get Text</button>
+    <button id="getUsers">Get Users</button>
+    <button id="getPosts">Get API data</button>
+    <hr>
+
+    <div id="output"></div>
+    <p id="showup"></p>
+    <p id="showup2"></p>
+    <form action="" id="addPost">
+        <div>
+            <input type="text" id="title" placeholder="title">
+        </div>
+        <div>
+            <textarea id="body"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+        
+    </form>
+
+    <script>
+        document.getElementById('getText').addEventListener('click', getText);
+        document.getElementById('getUsers').addEventListener('click', signup);
+        document.getElementById('getPosts').addEventListener('click', getPosts);
+        document.getElementById('addPost').addEventListener('click', addPost);
+
+        
+        function signup() {
+            //const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxODB9LCJpYXQiOjE1MzI5NTkyMTksImV4cCI6MTUzMjk2MjgxOX0.vK1C9KXEL4vLuQmVGxicSdoz2PnPytvuPKBAHfnH30w';
+
+            fetch('https://more-recipes.herokuapp.com/api/v1/users/signup', {
+                method: "POST",
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-type' : 'application/json'
+                },
+                
+               body: JSON.stringify({
+	"user": {
+          "fullname" : "Nice2 Guy",
+          "email": "nidcdde@guy.com",
+          "password": "10hh2938"
+	}
+        })
+            })
+           .then(response => response.json())
+           .then(result => {
+               console.log(result);
+           })
+            .catch((err) => console.log(err))
+        }
+
+        function getPosts() {
+            const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxODB9LCJpYXQiOjE1MzI5NTkyMTksImV4cCI6MTUzMjk2MjgxOX0.vK1C9KXEL4vLuQmVGxicSdoz2PnPytvuPKBAHfnH30w';
+
+            let headers = new Headers();
+            fetch('https://more-recipes.herokuapp.com/api/v1/recipes', {
+                method: "GET",
+                headers: {
+                    
+                    'token': token
+                },
+               // body: JSON.stringify({title: title, body: body})
+            })
+           .then(response => response.json())
+           .then(result => {
+               console.log(result);
+               result.recipes.forEach(recipe => {
+                document.getElementById('showup').innerHTML += `${recipe.id} ${recipe.name}<br> ${recipe.description}<br><br>`;
+                //document.getElementById('showup2').innerHTML += `${recipe.description}<br>`;
+ });
+           })
+            .catch((err) => console.log(err))
+        }
+
+
+    </script>
+</body>
+</html>
