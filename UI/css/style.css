@@ -195,15 +195,15 @@ button {
   font-size: 1.3rem;
   cursor: pointer;
 }
-.header li.active {
+.header li {
+  transition: all .4s ease-in-out;
+}
+.content.all-view .header li.viewAllRecipe, .content.create-view .header li.createRecipe {
   border-top: 4px solid var(--outrageous-orange);
 }
 .content .text {
   padding: 4rem 5rem;
   min-height: 38rem;
-  max-height: 500px;
-  opacity: 1;
-  transition-delay: .6s;
 }
 .content .text > div {
   height: 100%;
@@ -214,9 +214,19 @@ button {
   transition-duration: .6s;
 	transition-timing-function: ease-in-out;
 }
-.content .text.all-view > .all, .content .text.create-view > .create {
+.content.all-view .text > .all, .content.create-view .text > .create {
   max-height: 500px;
   opacity: 1;
   transition-delay: .6s;
+}
+.content ul.list li {
+  cursor: pointer;
+}
+.content ul li h5 {
+  margin-bottom: 1rem;
+  color: black;
+}
+.content ul li p {
+  margin-bottom: 1rem;
 }
 
