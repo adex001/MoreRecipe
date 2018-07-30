@@ -1,0 +1,150 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+/*grid css */
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col-1-6 {
+  width: 16.66%;
+}
+
+.col-2-6 {
+  width: 33.33%;
+}
+
+.col-3-6 {
+  width: 50.00%;
+}
+
+.col-4-6 {
+  width: 66.66%;
+}
+
+.col-5-6 {
+  width: 83.33%;
+}
+
+.col-6-6 {
+  width: 100%;
+}
+
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+
+[class*='col-'] {
+  padding-right: 0px;
+}
+
+/*normal css */
+html, body {
+  margin: 0px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  overflow: none;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#create_new_recipe {
+  background: #fceedb;
+  padding-top: 5%;
+}
+#create_new_recipe .first_row {
+  height: 84vh;
+  position: relative;
+}
+#create_new_recipe .first_row img {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  -webkit-filter: grayscale(0%) brightness(60%) blur(0px);
+          filter: grayscale(0%) brightness(60%) blur(0px);
+  position: absolute;
+}
+#create_new_recipe .first_row .content {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+}
+#create_new_recipe .first_row .content h1 {
+  color: white;
+  font-size: 2em;
+}
+#create_new_recipe .second_row {
+  background: #fafafa;
+}
+#create_new_recipe .second_row nav {
+  background: #f4c37d;
+  height: 40px;
+}
+#create_new_recipe .second_row nav ul {
+  padding-top: 10px;
+  margin: 0px;
+  list-style: none;
+}
+#create_new_recipe .second_row nav ul li {
+  display: inline;
+}
+#create_new_recipe .second_row nav ul li a {
+  color: white;
+}
+#create_new_recipe .second_row form {
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+}
+#create_new_recipe .second_row form h3 {
+  color: #694109;
+}
+#create_new_recipe .second_row form .field {
+  margin-bottom: 15px;
+}
+#create_new_recipe .second_row form .field label {
+  padding-top: 10px;
+}
+#create_new_recipe .second_row form .field input[type='text'] {
+  height: 40px;
+  width: 100%;
+  border: 1px solid #fdf5eb;
+}
+#create_new_recipe .second_row form .field input[type='text']:focus {
+  background: #fceedb;
+}
+#create_new_recipe .second_row form .field textarea {
+  height: 40px;
+  width: 100%;
+  border: 1px solid #fdf5eb;
+}
+#create_new_recipe .second_row form .field textarea:focus {
+  background: #fceedb;
+}
+#create_new_recipe .second_row form .field input[type='submit'] {
+  background: #f4c37d;
+  height: 40px;
+  width: 100%;
+  border: none;
+  color: white;
+}
