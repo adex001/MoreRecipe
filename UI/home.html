@@ -15,10 +15,10 @@
     </div>
     <div class="content">
       <ul class="header">
-        <li class="active">CREATE</li>
-        <li>ALL RECIPES</li>
+        <li onclick="toggleView('create')" class="active" id="createRecipe">CREATE</li>
+        <li onclick="toggleView('all')" id="viewAllRecipe">ALL RECIPES</li>
       </ul>
-      <div class="text">
+      <div class="text create-view">
         <div class="create">
           <form action="#" name="create">
               <div class="input">
@@ -40,13 +40,15 @@
               <button class="round btn">Create</button>
             </form>
         </div>
-        <!-- <div class="all">
+        <div class="all">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias nihil quia amet eveniet voluptates nulla doloribus, sunt asperiores possimus voluptatum quae, earum quisquam modi. Magni quas aut illum pariatur nesciunt.
-        </div> -->
+        </div>
       </div>
     </div>
   </div>
   <img src="img/download.png" alt="why">
   <script src="js/app.js"></script>
+  <script>
+  </script>
 </body>
 </html>

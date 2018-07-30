@@ -11,4 +11,9 @@ const initInput = () => {
     })
   }
 }
+
+let toggleView = (view) => {
+  let text = document.querySelector('.text')
+  text.className = `text ${view}-view`
+}
 initInput();
