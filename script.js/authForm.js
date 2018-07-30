@@ -4,7 +4,7 @@ const signupForm = document.querySelector('#signupForm');
 const switchAuthForm = (event) => {
     const selectAuthDivs = document.querySelectorAll('.userForm');
     selectAuthDivs[0].style.display = 'block';
-    if (event.target.id = 'signinForm') {
+    if (event.target.id === 'signinForm') {
         selectAuthDivs[1].style.display = 'block';
         selectAuthDivs[0].style.display = 'none'
     }
