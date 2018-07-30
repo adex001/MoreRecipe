@@ -1,0 +1,73 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400');
+/* variables */
+:root {
+  --background-color: #fcf8ef;
+  --outrageous-orange: #ff5925;
+}
+/* resets */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: 'Ubuntu', sans-serif;
+}
+body {
+  font-weight: 400;
+  font-size: 1.6rem;
+  background: var(--background-color);
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  padding: 20rem;
+  color: gray;
+}
+.body .img {
+  flex: 1 0 300px;
+  min-height: 70vh;
+  box-shadow: 30px 0 100px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url(../img/img.jpeg);
+  background-size: 100%;
+  border-radius: 6px;
+  z-index: 1;
+  color: white;
+}
+.body .content {
+  flex: 1 0 500px;
+  box-shadow: 10px 3px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background: white;
+}
+.content .header {
+  display: flex;
+  border-bottom: 1px solid #ececeb;
+  list-style: none;
+}
+.header li {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.header li.active {
+  border-top: 4px solid #ec86a0;
+}
+.content .text {
+  min-height: 300px;
+  padding: 5rem 2rem;
+}
